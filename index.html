@@ -6,6 +6,7 @@
   <title>Emmet Hoversten | Personal Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
@@ -24,20 +25,39 @@
     <button onclick="scrollToSection('contact')">Contact Me</button>
   </header>
 
-  <section id="about">
+  <div id="about">
+    <img src="images/face.jpeg" alt="Your Photo">
     <h2>About Me</h2>
-    <img src="images/face.jpeg" alt="Profile Picture" />
-    <p>
-      I'm a Computer Science student at the University of Minnesota-Twin Cities, expected to graduate in Dec 2025. With a GPA of 3.967 and five-time Dean's List recognition, I’m experienced in teaching, problem-solving, and creating software solutions. I'm proficient in multiple languages and tools, and passionate about both collaborative and independent development.
-    </p>
-    <ul class="info-list">
-      <li><strong>Location:</strong> Minneapolis, MN</li>
-      <li><strong>Email:</strong> emmethoversten@gmail.com</li>
-      <li><strong>Phone:</strong> 612-747-5701</li>
-      <li><strong>GitHub:</strong> <a href="#">GitHub</a></li>
-      <li><strong>LinkedIn:</strong> <a href="#">LinkedIn</a></li>
-    </ul>
-  </section>
+    <p>Computer Science student with a passion for problem-solving and learning new skills.</p>
+    <div class="contact-info">
+        <div class="info-box">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Location</p>
+        </div>
+      <a href="mailto:emmethoversten@gmail.com" target="_blank">
+        <div class="info-box">
+          <i class="fas fa-envelope"></i>
+          <p>Email</p>
+        </div>
+      </a>
+      <a href="https://github.com/ejhover" target="_blank">
+        <div class="info-box">
+          <i class="fab fa-github"></i>
+          <p>GitHub</p>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank">
+        <div class="info-box">
+          <i class="fab fa-linkedin"></i>
+          <p>LinkedIn</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  
+  
+  
 
   <section id="projects">
     <h2>Projects</h2>
