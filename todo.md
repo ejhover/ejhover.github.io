@@ -1,0 +1,8 @@
+- add little emojis next to stuff to make it look up to date
+- make the page move cool when you clikc to one of the sections like nice and slow instead of going straight to it
+- add animations 
+- change the background color of the website.
+- add all of the links for github and linkedin and stuff
+- add links on the project div's
+- change to react if you need it?
+- look at examples of people's websites like brandon lams or something
