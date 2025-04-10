@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emmet Hoversten | Personal Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="scripts/script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmet Hoversten | Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
-  <nav>
-    <ul class="navbar">
-      <li><a class="nav-link" href="#home">Home</a></li>
-      <li><a class="nav-link" href="#about">About</a></li>
-      <li><a class="nav-link" href="#projects">Projects</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+        <ul class="navbar">
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <header id="home">
-    <h1>Emmet Hoversten</h1>
-    <p>Computer Science Student</p>
-    <button onclick="scrollToSection('contact')">Contact Me</button>
-  </header>
+    <header id="home">
+        <h1>Emmet Hoversten</h1>
+        <p>Computer Science Student</p>
+        <button onclick="scrollToSection('contact')">Contact Me</button>
+    </header>
 
-  <div id="about">
-    <img src="images/face.jpeg" alt="Your Photo">
-    <h2>About Me</h2>
-    <p>Computer Science student with a passion for problem-solving and learning new skills.</p>
-    <div class="contact-info">
-        <div class="info-box">
-          <i class="fas fa-map-marker-alt"></i>
-          <p>Location</p>
+    <div id="about">
+        <img src="images/face.jpeg" alt="Your Photo">
+        <h2>About Me</h2>
+        <p>Computer Science student with a passion for problem-solving and learning new skills.</p>
+        <div class="contact-info">
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Location</p>
+            </div>
+            <a href="mailto:emmethoversten@gmail.com" target="_blank">
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email</p>
+                </div>
+            </a>
+            <a href="https://github.com/ejhover" target="_blank">
+                <div class="info-box">
+                    <i class="fab fa-github"></i>
+                    <p>GitHub</p>
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank">
+                <div class="info-box">
+                    <i class="fab fa-linkedin"></i>
+                    <p>LinkedIn</p>
+                </div>
+            </a>
         </div>
-      <a href="mailto:emmethoversten@gmail.com" target="_blank">
-        <div class="info-box">
-          <i class="fas fa-envelope"></i>
-          <p>Email</p>
-        </div>
-      </a>
-      <a href="https://github.com/ejhover" target="_blank">
-        <div class="info-box">
-          <i class="fab fa-github"></i>
-          <p>GitHub</p>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank">
-        <div class="info-box">
-          <i class="fab fa-linkedin"></i>
-          <p>LinkedIn</p>
-        </div>
-      </a>
     </div>
-  </div>
-  
-  
-  
-  
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>TA Time Recorder</h3>
-        <p>Desktop software to track and edit time spent on teaching assistant tasks, built to streamline timesheet submissions.</p>
-      </div>
-      <div class="project">
-        <h3>Maze Generator</h3>
-        <p>Generates, solves, and displays mazes using Turtle graphics. Accepts user input to traverse the maze.</p>
-      </div>
-      <div class="project">
-        <h3>Drone Package Delivery Simulation</h3>
-        <p>Simulates 3D drone delivery paths at the UMN campus using search algorithms and design patterns like factory, strategy, and decorator.</p>
-      </div>
-      <div class="project">
-        <h3>Chess</h3>
-        <p>Command-line chess game with Unicode board, move validation, and win condition checking.</p>
-      </div>
-    </div>
-  </section>
+    <section id="projects" class="sep">
+        <h2 class="sep">Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>TA Time Recorder</h3>
+                <p>Desktop software to track and edit time spent on teaching assistant tasks, built to streamline
+                    timesheet submissions.</p>
+            </div>
+            <div class="project">
+                <h3>Maze Generator</h3>
+                <p>Generates, solves, and displays mazes using Turtle graphics. Accepts user input to traverse the maze.
+                </p>
+            </div>
+            <div class="project">
+                <h3>Drone Package Delivery Simulation</h3>
+                <p>Simulates 3D drone delivery paths at the UMN campus using search algorithms and design patterns like
+                    factory, strategy, and decorator.</p>
+            </div>
+            <div class="project">
+                <h3>Chess</h3>
+                <p>Command-line chess game with Unicode board, move validation, and win condition checking.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <form onsubmit="handleSubmit(event)">
-      <input type="text" placeholder="Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea rows="5" placeholder="Message me here!" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea rows="5" placeholder="Message me here!" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-  <footer>
-    &copy; 2025 Emmet Hoversten. All rights reserved.
-  </footer>
+    <footer>
+        &copy; 2025 Emmet Hoversten. All rights reserved.
+    </footer>
 </body>
+
 </html>
