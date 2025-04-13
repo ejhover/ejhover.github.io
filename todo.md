@@ -4,3 +4,4 @@
 - add links on the project div's
 - change to react if you need it?
 - look at examples of people's websites to add more features
+- add/test out the particle animation background
