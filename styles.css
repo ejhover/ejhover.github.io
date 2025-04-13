@@ -153,11 +153,11 @@ header button:hover {
 
 #about .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 0.15fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, .1fr));
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0rem;
     margin-top: 2rem;
-    padding-left: 5rem;
+    padding-left: 2rem;
 }
 
 #about .contact-info a {
@@ -179,7 +179,87 @@ header button:hover {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    perspective: 1000px;
 }
+
+/* Flipping tile stuff */
+
+#about .contact-info .flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+#about .contact-info .info-box:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+#about .contact-info .flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--box-color);
+    box-shadow: 0 6px 20px rgba(157, 167, 168, 0.1);
+    padding: 1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+#about .contact-info .flip-front {
+    z-index: 2;
+    flex-direction: column;
+}
+
+#about .contact-info .flip-back {
+    transform: rotateY(180deg);
+    background-color: #8f8b8b;
+    color: var(--bg);
+    padding: 0.5rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+#about .contact-info .flip-back p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+#about .contact-info .flip-front,
+#about .contact-info .flip-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make sure text fits in the back of the tile. */
+.resize-text {
+    width: 100%;
+    overflow: hidden;
+    line-height: 1.2;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Flipping tile stuff */
+
 
 #about .contact-info .info-box:hover {
     transform: scale(1.05);
@@ -247,7 +327,7 @@ form textarea {
     border-radius: 5px;
     border: 1px solid #4f4c4c;
     background-color: #fffbfb;
-    color: var(--text-color);
+    color: #030303;
     font-size: 1rem;
 }
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="scripts/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
 </head>
 
 <body>
@@ -17,12 +18,12 @@
             <li><a class="nav-link" href="#home">Home</a></li>
             <li><a class="nav-link" href="#about">About</a></li>
             <li><a class="nav-link" href="#projects">Projects</a></li>
-            <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <header id="home">
-        <h1>Emmet Hoversten</h1>
+        <h1><span id="typed"></span></h1>
+        <!-- <h1>Emmet Hoversten</h1> -->
         <p>Computer Science Student</p>
         <a href="/resume.html">
             <button>Resume</button>
@@ -34,26 +35,56 @@
         <h2>About Me</h2>
         <p>Computer Science student with a passion for problem-solving and learning new skills.</p>
         <div class="contact-info">
-            <div class="info-box">
-                <i class="fas fa-map-marker-alt"></i>
-                <p>Location</p>
+            <div class="info-box" padding-left="5rem">
+                <div class="flip-inner">
+                    <div class="flip-front">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Location</p>
+                    </div>
+                    <div class="flip-back">
+                        <p class="resize-text">Minneapolis, MN</p>
+                    </div>
+                </div>
             </div>
-            <a href="mailto:emmethoversten@gmail.com" target="_blank">
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=emmethoversten@gmail.com" target="_blank">
                 <div class="info-box">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email</p>
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <i class="fas fa-envelope"></i>
+                            <p>Email</p>
+                        </div>
+                        <div class="flip-back">
+                            <p class="resize-text">emmethoversten</p>
+                            <p class="resize-text">@gmail.com</p>
+                        </div>
+                    </div>
                 </div>
             </a>
             <a href="https://github.com/ejhover" target="_blank">
                 <div class="info-box">
-                    <i class="fab fa-github"></i>
-                    <p>GitHub</p>
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <i class="fab fa-github"></i>
+                            <p>Github</p>
+                        </div>
+                        <div class="flip-back">
+                            <p class="resize-text">ejhover</p>
+                        </div>
+                    </div>
                 </div>
             </a>
             <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank">
                 <div class="info-box">
-                    <i class="fab fa-linkedin"></i>
-                    <p>LinkedIn</p>
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <i class="fab fa-linkedin"></i>
+                            <p class="resize-text">LinkedIn</p>
+                        </div>
+                        <div class="flip-back">
+                            <p class="resize-text">Emmet Hoversten</p>
+                        </div>
+                    </div>
                 </div>
             </a>
         </div>
@@ -64,7 +95,8 @@
         <div class="projects">
             <div class="project">
                 <h3>Movie/TV Show Rating Social Platform</h3>
-                <p>Social media React web-app for sharing/rating movies and TV shows with your friends utilizing genAI to provide recommendations for users and groups of users to find common media interests.</p>
+                <p>Social media React web-app for sharing/rating movies and TV shows with your friends utilizing genAI
+                    to provide recommendations for users and groups of users to find common media interests.</p>
             </div>
             <div class="project">
                 <h3>Drone Package Delivery Simulation</h3>
@@ -86,16 +118,6 @@
                 <p>Command-line chess game with Unicode board, move validation, and win condition checking.</p>
             </div>
         </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <form onsubmit="handleSubmit(event)">
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea rows="5" placeholder="Message me here!" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
     </section>
 
     <footer>
