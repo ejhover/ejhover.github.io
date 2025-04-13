@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmet Hoversten | Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a class="nav-link" href="/index.html#home">Home</a></li>
+            <li><a class="nav-link" href="index.html#about">About</a></li>
+            <li><a class="nav-link" href="index.html#projects">Projects</a></li>
+            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Emmet Hoversten</h1>
+        <p>Computer Science Student</p>
+    </header>
+
+    <section id="resume">
+        <div class="iframe-container">
+            <iframe src="https://docs.google.com/document/d/e/2PACX-1vQWpi2ORxcwBBEKoGSSg1ZsVPusGccAFVgpE0_7aVxK8iYwZljrc541VqhOYfMqFes_5HyB6Y7s4-Fc/pub?embedded=true"></iframe>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea rows="5" placeholder="Message me here!" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Emmet Hoversten. All rights reserved.
+    </footer>
+</body>
+
+</html>

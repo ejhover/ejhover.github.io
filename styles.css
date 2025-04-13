@@ -279,3 +279,18 @@ footer {
     font-size: 0.9rem;
     color: #a88c7d;
 }
+
+iframe {
+    width: 100%;
+    height: 1000px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+}
