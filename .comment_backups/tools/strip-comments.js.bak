@@ -1,0 +1,80 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+const strip = require('strip-comments');
+
+const root = path.resolve(__dirname, '..');
+const backupDir = path.join(root, '.comment_backups');
+const exts = ['.js', '.jsx', '.ts', '.tsx', '.css', '.md', '.html', '.scss', '.less'];
+
+function walk(dir) {
+  let results = [];
+  const list = fs.readdirSync(dir);
+  list.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    if (stat && stat.isDirectory()) {
+      if (file === 'node_modules' || file === '.git' || file === '.comment_backups') return;
+      results = results.concat(walk(filePath));
+    } else {
+      results.push(filePath);
+    }
+  });
+  return results;
+}
+
+function ensureBackupDir() {
+  if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir);
+}
+
+function isTarget(file) {
+  const ext = path.extname(file).toLowerCase();
+  return exts.includes(ext);
+}
+
+function backup(file, relPath) {
+  const dest = path.join(backupDir, relPath + '.bak');
+  const destDir = path.dirname(dest);
+  if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+  fs.copyFileSync(file, dest);
+}
+
+function processFile(file) {
+  const relPath = path.relative(root, file);
+  if (!isTarget(file)) return { file: relPath, skipped: true };
+  const content = fs.readFileSync(file, 'utf8');
+  let stripped;
+  try {
+    stripped = strip(content);
+  } catch (e) {
+    // If strip fails, skip file
+    return { file: relPath, error: e.message };
+  }
+  // Avoid writing if no changes
+  if (stripped === content) return { file: relPath, changed: false };
+
+  backup(file, relPath);
+  fs.writeFileSync(file, stripped, 'utf8');
+  return { file: relPath, changed: true };
+}
+
+function main() {
+  ensureBackupDir();
+  const files = walk(root);
+  const results = [];
+  files.forEach(f => {
+    const r = processFile(f);
+    results.push(r);
+  });
+
+  const changed = results.filter(r => r.changed).length;
+  const skipped = results.filter(r => r.skipped).length;
+  const errors = results.filter(r => r.error);
+
+  console.log(`Processed ${results.length} files. Changed: ${changed}, Skipped: ${skipped}, Errors: ${errors.length}`);
+  if (errors.length) {
+    errors.forEach(e => console.error('Error:', e.file, e.error));
+  }
+}
+
+if (require.main === module) main();

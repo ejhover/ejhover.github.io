@@ -1,0 +1,20 @@
+# Emmet Hoversten - Recreated Portfolio
+
+This repository recreates the portfolio site from the files you provided. It's a minimal Next.js project with Tailwind CSS and Framer Motion.
+
+## Quick start
+
+1. Install dependencies
+   ```bash
+   npm install
+   ```
+2. Run development server
+   ```bash
+   npm run dev
+   ```
+
+Open http://localhost:3000 to view the site.
+
+Notes:
+- The project uses `@/*` path alias to map to `src/*` (see `jsconfig.json`).
+- The `Resume` section embeds a public Google Doc (ID present in the file).

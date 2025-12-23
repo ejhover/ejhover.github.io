@@ -1,0 +1,125 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
+
+export default function ProjectCard({ project, index }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group"
+    >
+      <div 
+        className={`relative p-6 md:p-8 rounded-2xl bg-gradient-to-br ${project.gradient} border border-white/10 backdrop-blur-sm transition-all duration-300 hover:border-white/20`}
+      >
+        {}
+        <div className="flex items-start justify-between mb-4">
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+              {project.title}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.slice(0, 3).map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2 py-1 rounded-md bg-white/10 text-xs text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
+              {project.tech.length > 3 && (
+                <span className="px-2 py-1 rounded-md bg-white/10 text-xs text-gray-400">
+                  +{project.tech.length - 3}
+                </span>
+              )}
+            </div>
+          </div>
+          
+          <div className="flex gap-2">
+            {project.github && (
+              <motion.a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-2 rounded-lg bg-white/10 text-gray-400 hover:text-white hover:bg-white/20 transition-colors"
+              >
+                <Github size={18} />
+              </motion.a>
+            )}
+            {project.live && (
+              <motion.a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-2 rounded-lg bg-white/10 text-gray-400 hover:text-white hover:bg-white/20 transition-colors"
+              >
+                <ExternalLink size={18} />
+              </motion.a>
+            )}
+          </div>
+        </div>
+        
+        {}
+        <p className="text-gray-300 mb-4 leading-relaxed">
+          {project.description}
+        </p>
+        
+        {}
+        <AnimatePresence>
+          {expanded && project.features && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="overflow-hidden"
+            >
+              <div className="pt-4 border-t border-white/10">
+                <p className="text-sm text-gray-400 mb-3">Key Features:</p>
+                <ul className="space-y-2">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                      <span className="mt-1.5 w-1 h-1 rounded-full bg-blue-400 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        
+        {}
+        {project.features && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="mt-4 flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+          >
+            {expanded ? (
+              <>
+                Show less <ChevronUp size={16} />
+              </>
+            ) : (
+              <>
+                Show more <ChevronDown size={16} />
+              </>
+            )}
+          </button>
+        )}
+        
+        {}
+        <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden rounded-tr-2xl">
+          <div className="absolute top-2 right-2 w-3 h-3 rounded-full bg-white/20" />
+          <div className="absolute top-2 right-8 w-2 h-2 rounded-full bg-white/10" />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
