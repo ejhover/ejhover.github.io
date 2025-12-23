@@ -15,7 +15,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
-          {}
+          { }
           <div className="relative">
             <motion.div
               className="aspect-square rounded-3xl bg-gradient-to-br from-blue-500/20 to-slate-500/20 border border-white/10 backdrop-blur-sm overflow-hidden"
@@ -46,14 +46,14 @@ export default function AboutSection() {
                   <p className="text-white font-semibold text-lg">Class of 2025</p>
                 </div>
               </div>
-              
-              {}
+
+              { }
               <div className="absolute top-4 right-4 w-20 h-20 border border-blue-500/30 rounded-full" />
               <div className="absolute bottom-4 left-4 w-16 h-16 border border-slate-500/30 rounded-lg rotate-45" />
             </motion.div>
           </div>
-          
-          {}
+
+          { }
           <div>
             <motion.p
               initial={{ opacity: 0 }}
@@ -63,7 +63,7 @@ export default function AboutSection() {
             >
               About Me
             </motion.p>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ export default function AboutSection() {
                 Experiences
               </span>
             </motion.h2>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -84,13 +84,13 @@ export default function AboutSection() {
               transition={{ delay: 0.2 }}
               className="text-gray-400 leading-relaxed mb-8"
             >
-              I'm a Computer Science graduate from the University of Minnesota - Twin Cities, 
-              passionate about building innovative solutions at the intersection of AI, web development, 
-              and creative technology. With a strong foundation in software engineering and 6 semesters 
+              I'm a Computer Science graduate from the University of Minnesota - Twin Cities,
+              passionate about building innovative solutions at the intersection of AI, web development,
+              and creative technology. With a strong foundation in software engineering and 6 semesters
               of teaching experience, I bring both technical expertise and clear communication to every project.
             </motion.p>
-            
-            {}
+
+            { }
             <div className="grid grid-cols-3 gap-6">
               {[
                 { icon: GraduationCap, label: 'GPA', value: '3.96' },

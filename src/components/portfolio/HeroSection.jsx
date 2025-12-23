@@ -92,7 +92,7 @@ export default function HeroSection() {
             >
               {[
                 { icon: Github, href: 'https://github.com/ejhover', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com/in/emmethoversten', label: 'LinkedIn' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/emmet-hoversten-59929a173/', label: 'LinkedIn' },
                 { icon: Mail, href: 'mailto:emmethoversten@gmail.com', label: 'Email' },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
