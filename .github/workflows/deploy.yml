@@ -47,11 +47,15 @@ jobs:
           ls -la
 
       - name: Add CNAME (optional)
-        if: secrets.CUSTOM_DOMAIN != ''
         run: |
-          mkdir -p out
-          echo "${{ secrets.CUSTOM_DOMAIN }}" > out/CNAME
-          ls -la out
+          # Only create a CNAME if the secret is set (avoid using secrets in the step 'if' expression)
+          if [ -n "${{ secrets.CUSTOM_DOMAIN }}" ]; then
+            mkdir -p out
+            printf "%s" "${{ secrets.CUSTOM_DOMAIN }}" > out/CNAME
+            ls -la out
+          else
+            echo "No CUSTOM_DOMAIN secret set; skipping CNAME creation"
+          fi
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v4
