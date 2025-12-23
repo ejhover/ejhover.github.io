@@ -35,6 +35,9 @@ Alternate: If you'd prefer to publish directly to the `main` branch (for a repo 
 
 Note: After the workflow runs, your site will be available at `https://ejhover.github.io` (may take a few minutes on initial deploy).
 
+Permissions note:
+- If the workflow fails at the deploy step with a permission error (HTTP 403 when pushing to `gh-pages`), create a GitHub Personal Access Token (PAT) with the `repo` scope and add it to your repository secrets as `GH_PAGES_PAT` (Settings → Secrets & variables → Actions → New repository secret). The workflow supports using this secret (it will use `GITHUB_TOKEN` by default, and `GH_PAGES_PAT` if present).
+
 Notes:
 - The project uses `@/*` path alias to map to `src/*` (see `jsconfig.json`).
 - The `Resume` section embeds a public Google Doc (ID present in the file).
