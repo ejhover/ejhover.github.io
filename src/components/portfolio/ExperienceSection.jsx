@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   const highlights = [
     { icon: Users, value: '900+', label: 'Students Taught' },
     { icon: MessageSquare, value: '100+', label: 'Positive Reviews' },
-    { icon: Calendar, value: '5', label: 'Semesters' },
+    { icon: Calendar, value: '6', label: 'Semesters' },
     { icon: Star, value: '40+', label: 'Students per Lab' },
   ];
 
