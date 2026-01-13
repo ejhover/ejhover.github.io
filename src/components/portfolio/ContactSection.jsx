@@ -11,7 +11,7 @@ export default function ContactSection() {
 
   const socials = [
     { icon: Github, label: 'GitHub', href: 'https://github.com/ejhover' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/emmethoversten' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/emmet-hoversten-59929a173/' },
   ];
 
   return (
