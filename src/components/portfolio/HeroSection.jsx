@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
-  const titleWords = "Software Engineer".split(" ");
+  const titleWords = "Software Developer".split(" ");
   
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 relative">
@@ -70,7 +70,7 @@ export default function HeroSection() {
               transition={{ delay: 1 }}
               className="flex flex-wrap justify-center lg:justify-start gap-3 mb-12"
             >
-              {['AI Developer', 'Web Developer', 'Creative Producer'].map((tag, i) => (
+              {['Full-Stack', 'React + TypeScript', 'Node.js + PostgreSQL'].map((tag, i) => (
                 <motion.span
                   key={tag}
                   initial={{ opacity: 0, scale: 0.8 }}

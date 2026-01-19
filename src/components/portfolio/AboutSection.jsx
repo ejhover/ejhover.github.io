@@ -84,10 +84,11 @@ export default function AboutSection() {
               transition={{ delay: 0.2 }}
               className="text-gray-400 leading-relaxed mb-8"
             >
-              I'm a Computer Science graduate from the University of Minnesota - Twin Cities,
-              passionate about building innovative solutions at the intersection of AI, web development,
-              and creative technology. With a strong foundation in software engineering and 6 semesters
-              of teaching experience, I bring both technical expertise and clear communication to every project.
+              I'm a Computer Science graduate (B.S., Dec 2025) from the University of Minnesota Twin Cities.
+              I build production web applications with a focus on performance, usability, and clean design.
+              Most recently, I've been working as a contract Software Developer building React + TypeScript
+              frontends and Node.js + PostgreSQL backends for a REMAX client, and I spent six semesters as a
+              Teaching Assistant helping 900+ students learn Python.
             </motion.p>
 
             { }

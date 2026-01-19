@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Github, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, Phone, Github, Linkedin, Globe, ArrowUpRight } from 'lucide-react';
 
 export default function ContactSection() {
   const contactInfo = [
@@ -12,6 +12,7 @@ export default function ContactSection() {
   const socials = [
     { icon: Github, label: 'GitHub', href: 'https://github.com/ejhover' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/emmet-hoversten-59929a173/' },
+    { icon: Globe, label: 'Website', href: '/' },
   ];
 
   return (
