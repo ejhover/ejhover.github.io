@@ -14,31 +14,32 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'Legal Research Assistant',
-      description: 'AI legal research assistant that uses legal documents to accurately answer questions with RAG.',
-      tech: ['Python', 'OpenAI API', 'LangChain', 'Vector DB'],
+      title: 'Carver County Real Estate Platform',
+      description: 'Full-stack real estate content platform with SSR optimization, relational PostgreSQL schema, custom admin dashboard, and secure/optimized backend with row-level security.',
+      tech: ['Next.js', 'TypeScript', 'PostgreSQL'],
     },
     {
       title: 'Flix',
-      description: 'Social web app for sharing and rating movies and TV shows. Implemented GenAI-based recommendations for individuals and groups using AWS and DynamoDB.',
-      tech: ['ReactJS', 'AWS', 'DynamoDB', 'GenAI'],
+      description: 'Social movie discovery platform with serverless AWS architecture and DynamoDB. Implemented personalized and group-based AI recommendations using user preference embeddings.',
+      tech: ['ReactJS', 'Python', 'AWS', 'DynamoDB', 'GenAI'],
     },
     {
       title: 'LLM Workshop Series',
-      description: 'Led technical workshops as VP of Generative AI Club teaching OpenAI APIs, prompt engineering, LangChain, RAG systems, and vector stores to 50+ students.',
-      tech: ['OpenAI', 'LangChain', 'RAG', 'Prompt Engineering'],
+      description: 'Designed and led hands-on technical workshops on LLM application development, covering OpenAI APIs, RAG pipelines, vector databases, and system architecture for 50+ students.',
+      tech: ['OpenAI API', 'LangChain', 'RAG', 'Vector Stores'],
     },
     {
       title: 'Drone Delivery Simulation',
-      description: '3D simulation modeling drone delivery routes with optimal pathfinding. Implemented BFS, DFS, and A* algorithms with design patterns in an Agile workflow.',
-      tech: ['C++', 'Algorithms', 'Design Patterns'],
+      description: '3D drone delivery simulation modeling optimal routing across a virtual campus using BFS, DFS, and A*. Applied object-oriented design patterns within an Agile development cycle.',
+      tech: ['C++', 'Algorithms', 'A*', 'Design Patterns'],
     },
     {
       title: 'E-Commerce Web Server',
-      description: 'RESTful API backend for order management with persistent storage. Built clean frontend for browsing and managing orders with real-time updates.',
-      tech: ['ExpressJS', 'MongoDB', 'REST API'],
-    },
+      description: 'Full-stack e-commerce system with RESTful API backend, persistent MongoDB storage, session management, and dynamic frontend order tracking.',
+      tech: ['ExpressJS', 'MongoDB', 'REST APIs', 'JavaScript'],
+    }
   ];
+
 
   const experience = [
     {
@@ -77,16 +78,16 @@ export default function Portfolio() {
               <p className={`${textMuted} font-mono text-sm`}>AI Engineer / Software Developer</p>
             </div>
             <div className="flex gap-3">
-              <a href="https://github.com/ejhover" target="_blank" rel="noopener noreferrer" 
-                 className={`${textMuted} hover:${text} transition-colors`}>
+              <a href="https://github.com/ejhover" target="_blank" rel="noopener noreferrer"
+                className={`${textMuted} hover:${text} transition-colors`}>
                 <Github size={20} />
               </a>
               <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank" rel="noopener noreferrer"
-                 className={`${textMuted} hover:${text} transition-colors`}>
+                className={`${textMuted} hover:${text} transition-colors`}>
                 <Linkedin size={20} />
               </a>
               <a href="mailto:emmethoversten@gmail.com"
-                 className={`${textMuted} hover:${text} transition-colors`}>
+                className={`${textMuted} hover:${text} transition-colors`}>
                 <Mail size={20} />
               </a>
             </div>
@@ -119,10 +120,10 @@ export default function Portfolio() {
             <div>
               <h2 className="text-2xl font-mono font-bold mb-4">About</h2>
               <p className={`${textMuted} leading-relaxed mb-6`}>
-                Computer Science graduate (B.S., Dec 2025) from the University of Minnesota Twin Cities. 
-                I'm focused on transitioning into AI engineering, building intelligent systems with LLMs, 
-                machine learning, and generative AI. Recently worked as a contract Software Developer building 
-                React + TypeScript frontends and Node.js + PostgreSQL backends, with leadership experience 
+                Computer Science graduate (B.S., Dec 2025) from the University of Minnesota Twin Cities.
+                I'm focused on transitioning into AI engineering, building intelligent systems with LLMs,
+                machine learning, and generative AI. Recently worked as a contract Software Developer building
+                React + TypeScript frontends and Node.js + PostgreSQL backends, with leadership experience
                 in the Generative AI Club exploring OpenAI APIs, LangChain, and vector databases.
               </p>
               <div className="flex flex-wrap gap-2">
@@ -159,7 +160,6 @@ export default function Portfolio() {
                 <p>PyTorch</p>
                 <p>Vector DBs</p>
                 <p>RAG Systems</p>
-                <p>Prompt Eng.</p>
               </div>
             </div>
             <div className={`border ${border} p-4`}>
@@ -207,7 +207,7 @@ export default function Portfolio() {
 
         {/* Projects */}
         <section className="mb-20">
-          <h2 className="text-2xl font-mono font-bold mb-8">Selected Projects</h2>
+          <h2 className="text-2xl font-mono font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, i) => (
               <div key={i} className={`border ${border} p-6 hover:border-2 hover:p-[23px] transition-all cursor-default group`}>
@@ -216,7 +216,7 @@ export default function Portfolio() {
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map(tech => (
                     <span key={tech} className={`text-xs font-mono ${textMuted}`}>
-                      {tech}
+                      | {tech}
                     </span>
                   ))}
                 </div>
@@ -238,7 +238,7 @@ export default function Portfolio() {
                 <span className={`${textMuted} text-xs font-mono`}>2024 - Present</span>
               </div>
               <p className={`${textMuted} text-sm`}>
-                Led projects and workshops using OpenAI APIs, LangChain, vector stores, and custom tools. 
+                Led projects and workshops using OpenAI APIs, LangChain, vector stores, and custom tools.
                 Managed club finances and coordinated technical initiatives teaching AI concepts to 50+ members.
               </p>
             </div>
@@ -248,10 +248,10 @@ export default function Portfolio() {
                   <h3 className="font-mono font-bold">Brazilian Jiu Jitsu Club</h3>
                   <p className={`${textMuted} text-sm font-mono`}>Member</p>
                 </div>
-                <span className={`${textMuted} text-xs font-mono`}>2023</span>
+                <span className={`${textMuted} text-xs font-mono`}>2022-2024</span>
               </div>
               <p className={`${textMuted} text-sm`}>
-                Active participant in club training sessions.
+                Active participant in club training sessions. Achieved rank of blue belt.
               </p>
             </div>
           </div>
