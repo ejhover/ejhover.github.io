@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Mail, Download, ExternalLink } from 'lucide-react';
 
-// Design 1: Swiss Minimalist - Clean, grid-based, monospace typography
 export default function Portfolio() {
-  const [theme, setTheme] = useState('light'); // 'light' or 'dark'
+  const [theme, setTheme] = useState('light');
 
   const bg = theme === 'light' ? 'bg-white' : 'bg-neutral-900';
   const text = theme === 'light' ? 'text-neutral-900' : 'text-neutral-100';
@@ -11,6 +10,8 @@ export default function Portfolio() {
   const border = theme === 'light' ? 'border-neutral-200' : 'border-neutral-700';
   const accent = theme === 'light' ? 'bg-neutral-900' : 'bg-neutral-100';
   const accentText = theme === 'light' ? 'text-white' : 'text-neutral-900';
+
+  const darkiFrame = theme === 'dark' ? 'invert hue-rotate-180' : '';
 
   const projects = [
     {
@@ -60,7 +61,6 @@ export default function Portfolio() {
 
   return (
     <div className={`min-h-screen ${bg} ${text} transition-colors duration-300`}>
-      {/* Theme Toggle - moved to bottom left */}
       <button
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         className={`fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full ${accent} ${accentText} flex items-center justify-center text-xs font-mono hover:scale-110 transition-transform shadow-lg`}
@@ -96,7 +96,7 @@ export default function Portfolio() {
       </header>
 
       <main className="max-w-5xl mx-auto px-6 py-16">
-        {/* Profile Section */}
+        {/* profile  */}
         <section className="mb-20">
           <div className="grid md:grid-cols-[150px_1fr] gap-8 items-start">
             <div>
@@ -137,7 +137,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Skills */}
+        {/* skills */}
         <section className="mb-20">
           <h2 className="text-2xl font-mono font-bold mb-8">Technical Skills</h2>
           <div className="grid md:grid-cols-4 gap-6">
@@ -185,7 +185,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Experience */}
+        {/* experience */}
         <section className="mb-20">
           <h2 className="text-2xl font-mono font-bold mb-8">Experience</h2>
           <div className="space-y-8">
@@ -205,7 +205,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Projects */}
+        {/* projects */}
         <section className="mb-20">
           <h2 className="text-2xl font-mono font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -225,7 +225,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Activities */}
+        {/* activities */}
         <section className="mb-20">
           <h2 className="text-2xl font-mono font-bold mb-8">Leadership & Activities</h2>
           <div className="space-y-6">
@@ -257,7 +257,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Resume */}
+        {/* resume iframe*/}
         <section>
           <h2 className="text-2xl font-mono font-bold mb-4">Resume</h2>
           <div className="mb-4 flex gap-4">
@@ -280,14 +280,14 @@ export default function Portfolio() {
           <div className={`border ${border} overflow-hidden`}>
             <iframe
               src="https://docs.google.com/document/d/17Xn1xGJ9gcJJTIxmYmCLU3c0YjkV7ywOep8bdCrsGHA/preview"
-              className="w-full h-[800px] bg-white"
+              className={`w-full h-[800px] bg-white ${darkiFrame}`}
               title="Resume"
             />
           </div>
         </section>
       </main>
 
-      {/* Footer */}
+      {/* footer */}
       <footer className={`border-t ${border} py-8 px-6 mt-20`}>
         <div className="max-w-5xl mx-auto text-center">
           <p className={`${textMuted} text-xs font-mono`}>
