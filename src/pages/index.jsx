@@ -99,7 +99,7 @@ export default function Portfolio() {
           <div className="flex items-center gap-4">
             {/* email animation*/}
             <div className="group relative flex items-center px-2 py-2">
-              <div className="overflow-hidden flex justify-end max-w-0 group-hover:max-w-xs transition-all duration-500 ease-out">
+              <div className="hidden md:flex overflow-hidden justify-end max-w-0 group-hover:max-w-xs transition-all duration-500 ease-out">
                 <button
                   onClick={() => {
                     navigator.clipboard.writeText("emmethoversten@gmail.com");
@@ -121,7 +121,10 @@ export default function Portfolio() {
               >
                 <Mail size={20} />
               </button>
-              <div className={`absolute mt-10 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${textMuted}`}>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${textMuted} md:hidden ${copied ? 'opacity-100' : ''}`}>
+                {copied ? "Copied!" : ""}
+              </div>
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 text-xs font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${textMuted} hidden md:block`}>
                 {copied ? "Copied!" : "Click to copy"}
               </div>
             </div>
