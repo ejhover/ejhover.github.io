@@ -64,29 +64,25 @@ export default function Portfolio() {
     <div className={`min-h-screen ${bg} ${text} transition-colors duration-300`}>
 
       {/* navbar/header */}
-      <header className={`border-b ${border} py-8 px-6 relative`}>
-        <div className="max-w-5xl mx-auto flex items-center justify-between relative">
+      <header className={`border-b ${border} py-8 px-6`}>
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
 
-          {/* name/title  */}
-          <div className="flex flex-col">
+          {/* name/title */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 className="text-4xl font-mono font-bold mb-2">Emmet Hoversten</h1>
             <p className={`${textMuted} font-mono text-sm`}>AI Engineer / Software Developer</p>
           </div>
 
           {/* lightswitch */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="flex justify-center">
             <button
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
               className="w-10 h-16 bg-neutral-100 rounded-md shadow-lg border border-neutral-300 flex items-center justify-center active:scale-95 transition-transform"
               aria-label="Toggle theme"
             >
-              {/* screws */}
-              <div className="absolute top-3 w-1 h-1 bg-neutral-400 rounded-full shadow-inner" />
-              <div className="absolute bottom-3 w-1 h-1 bg-neutral-400 rounded-full shadow-inner" />
 
-              {/* slot background */}
+              {/* slot */}
               <div className="relative w-3 h-10 bg-neutral-300 rounded-sm flex items-center justify-center shadow-inner">
-                {/* lever */}
                 <div
                   className={`
                     absolute w-3 h-5 bg-white rounded-sm shadow-md
@@ -101,8 +97,8 @@ export default function Portfolio() {
 
           {/* contact icons */}
           <div className="flex items-center gap-4">
+            {/* email animation*/}
             <div className="group relative flex items-center px-2 py-2">
-              {/* email animation */}
               <div className="overflow-hidden flex justify-end max-w-0 group-hover:max-w-xs transition-all duration-500 ease-out">
                 <button
                   onClick={() => {
@@ -115,8 +111,6 @@ export default function Portfolio() {
                   emmethoversten [at] gmail [dot] com
                 </button>
               </div>
-
-              {/* mail icon */}
               <button
                 onClick={() => {
                   navigator.clipboard.writeText("emmethoversten@gmail.com");
@@ -127,8 +121,6 @@ export default function Portfolio() {
               >
                 <Mail size={20} />
               </button>
-
-              {/* copy to clipboard animation  */}
               <div className={`absolute mt-10 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${textMuted}`}>
                 {copied ? "Copied!" : "Click to copy"}
               </div>
@@ -144,6 +136,7 @@ export default function Portfolio() {
               <Linkedin size={20} />
             </a>
           </div>
+
         </div>
       </header>
 
