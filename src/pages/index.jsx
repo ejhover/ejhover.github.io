@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { Github, Linkedin, Mail, Download, ExternalLink } from "lucide-react";
-import { Caveat } from "next/font/google";
-
-const caveat = Caveat({ subsets: ["latin"] });
 
 export default function Portfolio() {
   const [theme, setTheme] = useState("light");
@@ -112,94 +109,6 @@ export default function Portfolio() {
                   />
                 </div>
               </button>
-
-              {/* wall writing */}
-              <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 select-none pointer-events-none w-[120px]">
-                <svg
-                  width="120"
-                  height="60"
-                  viewBox="0 0 120 60"
-                  className={`transition-colors duration-300 ${theme === "light" ? "opacity-20" : "opacity-15"}`}
-                >
-                  <defs>
-                    <filter id="roughen">
-                      <feTurbulence
-                        type="turbulence"
-                        baseFrequency="0.02"
-                        numOctaves="3"
-                        result="noise"
-                        seed="2"
-                      />
-                      <feDisplacementMap
-                        in="SourceGraphic"
-                        in2="noise"
-                        scale="1.2"
-                      />
-                    </filter>
-                  </defs>
-
-                  <text
-                    x="8"
-                    y="18"
-                    fontSize="11"
-                    fill="currentColor"
-                    filter="url(#roughen)"
-                    style={{
-                      fontFamily: caveat.style.fontFamily,
-                      letterSpacing: "0.5px",
-                      transform: "rotate(-3deg)",
-                      transformOrigin: "60px 30px",
-                    }}
-                    className={
-                      theme === "light"
-                        ? "text-neutral-900"
-                        : "text-neutral-100"
-                    }
-                  >
-                    {theme === "light" ? "too bright?" : "too scary?"}
-                  </text>
-
-                  <path
-                    d="M 115,15 C 110,18 118,25 108,28 C 98,31 105,38 95,40 C 85,42 90,48 78,47 C 70,46 65,44 62,43"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    fill="none"
-                    strokeLinecap="round"
-                    filter="url(#roughen)"
-                    className={
-                      theme === "light"
-                        ? "text-neutral-900"
-                        : "text-neutral-100"
-                    }
-                  />
-                  <path
-                    d="M 62,43 C 67,39 70,36 69,33"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    fill="none"
-                    strokeLinecap="round"
-                    filter="url(#roughen)"
-                    className={
-                      theme === "light"
-                        ? "text-neutral-900"
-                        : "text-neutral-100"
-                    }
-                  />
-                  <path
-                    d="M 62,43 C 67,46 69,50 68,53"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    fill="none"
-                    strokeLinecap="round"
-                    filter="url(#roughen)"
-                    className={
-                      theme === "light"
-                        ? "text-neutral-900"
-                        : "text-neutral-100"
-                    }
-                  />
-                </svg>
-              </div>
             </div>
           </div>
 
