@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Github, Linkedin, Mail, Download, ExternalLink } from "lucide-react";
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({ subsets: ["latin"] });
 
 export default function Portfolio() {
   const [theme, setTheme] = useState("light");
@@ -142,7 +145,7 @@ export default function Portfolio() {
                     fill="currentColor"
                     filter="url(#roughen)"
                     style={{
-                      fontFamily: "'Segoe UI', cursive",
+                      fontFamily: caveat.style.fontFamily,
                       letterSpacing: "0.5px",
                       transform: "rotate(-3deg)",
                       transformOrigin: "60px 30px",
