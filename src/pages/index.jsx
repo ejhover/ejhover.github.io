@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, Download, ExternalLink } from 'lucide-react';
 
 export default function Portfolio() {
   const [theme, setTheme] = useState('light');
+  const [copied, setCopied] = useState(false);
 
   const bg = theme === 'light' ? 'bg-white' : 'bg-neutral-900';
   const text = theme === 'light' ? 'text-neutral-900' : 'text-neutral-100';
@@ -61,39 +62,91 @@ export default function Portfolio() {
 
   return (
     <div className={`min-h-screen ${bg} ${text} transition-colors duration-300`}>
-      <button
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        className={`fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full ${accent} ${accentText} flex items-center justify-center text-xs font-mono hover:scale-110 transition-transform shadow-lg`}
-        aria-label="Toggle theme"
-      >
-        {theme === 'light' ? '●' : '○'}
-      </button>
 
-      {/* Header */}
-      <header className={`border-b ${border} py-8 px-6`}>
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-4xl font-mono font-bold mb-2">Emmet Hoversten</h1>
-              <p className={`${textMuted} font-mono text-sm`}>AI Engineer / Software Developer</p>
-            </div>
-            <div className="flex gap-3">
-              <a href="https://github.com/ejhover" target="_blank" rel="noopener noreferrer"
-                className={`${textMuted} hover:${text} transition-colors`}>
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank" rel="noopener noreferrer"
-                className={`${textMuted} hover:${text} transition-colors`}>
-                <Linkedin size={20} />
-              </a>
-              <a href="mailto:emmethoversten@gmail.com"
-                className={`${textMuted} hover:${text} transition-colors`}>
+      {/* navbar/header */}
+      <header className={`border-b ${border} py-8 px-6 relative`}>
+        <div className="max-w-5xl mx-auto flex items-center justify-between relative">
+
+          {/* name/title  */}
+          <div className="flex flex-col">
+            <h1 className="text-4xl font-mono font-bold mb-2">Emmet Hoversten</h1>
+            <p className={`${textMuted} font-mono text-sm`}>AI Engineer / Software Developer</p>
+          </div>
+
+          {/* lightswitch */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <button
+              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              className="w-10 h-16 bg-neutral-100 rounded-md shadow-lg border border-neutral-300 flex items-center justify-center active:scale-95 transition-transform"
+              aria-label="Toggle theme"
+            >
+              {/* screws */}
+              <div className="absolute top-3 w-1 h-1 bg-neutral-400 rounded-full shadow-inner" />
+              <div className="absolute bottom-3 w-1 h-1 bg-neutral-400 rounded-full shadow-inner" />
+
+              {/* slot background */}
+              <div className="relative w-3 h-10 bg-neutral-300 rounded-sm flex items-center justify-center shadow-inner">
+                {/* lever */}
+                <div
+                  className={`
+                    absolute w-3 h-5 bg-white rounded-sm shadow-md
+                    transition-all duration-300 ease-in-out
+                    origin-center
+                    ${theme === 'light' ? '-translate-y-4' : 'translate-y-4'}
+                  `}
+                />
+              </div>
+            </button>
+          </div>
+
+          {/* contact icons */}
+          <div className="flex items-center gap-4">
+            <div className="group relative flex items-center px-2 py-2">
+              {/* email animation */}
+              <div className="overflow-hidden flex justify-end max-w-0 group-hover:max-w-xs transition-all duration-500 ease-out">
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText("emmethoversten@gmail.com");
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 1500);
+                  }}
+                  className={`mr-3 text-sm font-mono ${text} whitespace-nowrap overflow-hidden border-r-2 border-current opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-200 group-hover:animate-typing`}
+                >
+                  emmethoversten [at] gmail [dot] com
+                </button>
+              </div>
+
+              {/* mail icon */}
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText("emmethoversten@gmail.com");
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 1500);
+                }}
+                className={`${textMuted} hover:${text} transition-all duration-300`}
+              >
                 <Mail size={20} />
-              </a>
+              </button>
+
+              {/* copy to clipboard animation  */}
+              <div className={`absolute mt-10 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${textMuted}`}>
+                {copied ? "Copied!" : "Click to copy"}
+              </div>
             </div>
+
+            {/* github */}
+            <a href="https://github.com/ejhover" target="_blank" rel="noopener noreferrer" className={`${textMuted} hover:${text} transition-all duration-300 px-2`}>
+              <Github size={20} />
+            </a>
+
+            {/* linkedin */}
+            <a href="https://www.linkedin.com/in/emmet-hoversten-59929a173/" target="_blank" rel="noopener noreferrer" className={`${textMuted} hover:${text} transition-all duration-300 px-2`}>
+              <Linkedin size={20} />
+            </a>
           </div>
         </div>
       </header>
+
 
       <main className="max-w-5xl mx-auto px-6 py-16">
         {/* profile  */}
