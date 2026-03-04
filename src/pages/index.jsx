@@ -80,7 +80,7 @@ export default function Portfolio() {
               Emmet Hoversten
             </h1>
             <p className={`${textMuted} font-mono text-sm`}>
-              AI Engineer / Software Developer
+              Software Developer
             </p>
           </div>
 
