@@ -17,16 +17,22 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Carver County Real Estate Platform",
+      title: "mark3ts",
       description:
-        "Full-stack real estate content platform with SSR optimization, relational PostgreSQL schema, custom admin dashboard, and secure/optimized backend with row-level security.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL"],
+        "AI market intelligence and paper-trading platform that converts financial news into conviction-weighted portfolio signals through a local Ollama LLM pipeline, asynchronous analysis workflows, and live market valuation updates.",
+      tech: ["LLM Pipelines", "Ollama", "ReactJS", "Node.js"],
     },
     {
       title: "Flix",
       description:
         "Social movie discovery platform with serverless AWS architecture and DynamoDB. Implemented personalized and group-based AI recommendations using user preference embeddings.",
       tech: ["ReactJS", "Python", "AWS", "DynamoDB", "GenAI"],
+    },
+    {
+      title: "Carver County Real Estate Platform",
+      description:
+        "Full-stack real estate content platform with SSR optimization, relational PostgreSQL schema, custom admin dashboard, and secure/optimized backend with row-level security.",
+      tech: ["Next.js", "TypeScript", "PostgreSQL"],
     },
     {
       title: "LLM Workshop Series",
