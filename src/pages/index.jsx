@@ -56,6 +56,14 @@ export default function Portfolio() {
 
   const experience = [
     {
+      role: "Software Engineer",
+      company: "Onni Health",
+      location: "Remote",
+      period: "Jan 2026 - Present",
+      description:
+        "Architected HIPAA-compliant backend and GCP infrastructure for FHIR R4 processing; built role-based caretaker access and async ingestion pipelines.",
+    },
+    {
       role: "Software Developer (Contract)",
       company: "Real Estate Technology — REMAX (Independent Client)",
       location: "Chaska, MN",
@@ -406,14 +414,14 @@ export default function Portfolio() {
           <h2 className="text-2xl font-mono font-bold mb-4">Resume</h2>
           <div className="mb-4 flex gap-4">
             <a
-              href="https://docs.google.com/document/d/17Xn1xGJ9gcJJTIxmYmCLU3c0YjkV7ywOep8bdCrsGHA/export?format=pdf"
+              href="https://docs.google.com/document/d/1iZi4MhSzDsPli5Oj7JDRJx8zl6-f_TGJ1c0lgOxBFKA/export?format=pdf"
               download="Emmet_Hoversten_Resume.pdf"
               className={`${accent} ${accentText} px-4 py-2 text-sm font-mono flex items-center gap-2 hover:opacity-80 transition-opacity`}
             >
               <Download size={16} /> Download PDF
             </a>
             <a
-              href="https://docs.google.com/document/d/17Xn1xGJ9gcJJTIxmYmCLU3c0YjkV7ywOep8bdCrsGHA/edit"
+              href="https://docs.google.com/document/d/1iZi4MhSzDsPli5Oj7JDRJx8zl6-f_TGJ1c0lgOxBFKA/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className={`border ${border} px-4 py-2 text-sm font-mono flex items-center gap-2 hover:bg-opacity-5 hover:bg-current transition-colors`}
@@ -423,7 +431,7 @@ export default function Portfolio() {
           </div>
           <div className={`border ${border} overflow-hidden`}>
             <iframe
-              src="https://docs.google.com/document/d/17Xn1xGJ9gcJJTIxmYmCLU3c0YjkV7ywOep8bdCrsGHA/preview"
+              src="https://docs.google.com/document/d/1iZi4MhSzDsPli5Oj7JDRJx8zl6-f_TGJ1c0lgOxBFKA/preview"
               className={`w-full h-[800px] bg-white ${darkiFrame}`}
               title="Resume"
             />
