@@ -61,7 +61,7 @@ export default function Portfolio() {
       location: "Remote",
       period: "Jan 2026 - Present",
       description:
-        "Architected HIPAA-compliant backend and GCP infrastructure for FHIR R4 processing; built role-based caretaker access and async ingestion pipelines.",
+        "Architected and implemented the HIPAA-compliant backend and GCP infrastructure for FHIR R4 processing; built role-based caretaker access and async ingestion pipelines.",
     },
     {
       role: "Software Developer (Contract)",
